@@ -13,7 +13,6 @@ jobs:
   - task: rspec_tests
     file: flight-school/build.yml
     
-jobs:
 - name: cucumber
   plan:
   - get: flight-school
