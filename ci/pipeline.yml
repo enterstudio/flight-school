@@ -6,9 +6,17 @@ resources:
     branch: master
 
 jobs:
-- name: test-app
+- name: rspec
   plan:
   - get: flight-school
     trigger: true
-  - task: tests
+  - task: rspec_tests
     file: flight-school/build.yml
+    
+jobs:
+- name: cucumber
+  plan:
+  - get: flight-school
+    trigger: true
+  - task: cucumber_tests
+    file: flight-school/build.yml    
